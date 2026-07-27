@@ -6,27 +6,19 @@
 [![spaCy](https://img.shields.io/badge/spaCy-NLP-09a3d5.svg)](https://spacy.io/)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-f89939.svg)](https://scikit-learn.org/)
 
-**[🚀 Live Demo](#)** &nbsp;|&nbsp; **[📓 Notebook](notebook/medical_transcriptions_classification.ipynb)** &nbsp;|&nbsp; **[📄 Full Report](report/Medical_Transcriptions_Classification_Report.docx)**
+**[🚀 Live Demo](https://medical-transcription-classifier.streamlit.app/)** &nbsp;|&nbsp; **[📓 Notebook](notebook/medical_transcriptions_classification.ipynb)** &nbsp;|&nbsp; **[📄 Full Report](report/Medical_Transcriptions_Classification_Report.docx)**
 
 ---
 
 ## 📌 Problem
 
-Hospitals process thousands of discharge summaries and clinical notes daily. Senior doctors spend hours manually reading these to categorize patients by specialty and flag critical symptoms — a slow, expensive, error-prone process.
+Hospitals process thousands of discharge summaries and clinical notes daily. Senior doctors spend hours manually reading these to categorize patients by specialty and flag critical symptoms - a slow, expensive, error-prone process.
 
 This project builds an automated NLP pipeline that:
 1. **Cleans** raw medical text and expands clinical abbreviations
 2. **Extracts** key medical entities (symptoms, body parts, descriptors)
-3. **Detects negation** — understanding that "denies chest pain" ≠ "has chest pain"
+3. **Detects negation** - understanding that "denies chest pain" ≠ "has chest pain"
 4. **Classifies** each report into the correct medical specialty
-
----
-
-## 🖼️ Preview
-
-| Vocabulary Differs by Specialty | Negation Detection |
-|:---:|:---:|
-| ![wordcloud comparison](images/wordcloud_comparison.png) | ![negation demo](images/negation_demo.png) |
 
 
 ---
@@ -76,8 +68,8 @@ Raw Transcription
 ## 🛠️ Tech Stack
 
 - **Language:** Python 3.8+
-- **NLP:** spaCy (`en_core_web_sm`) — POS tagging, dependency parsing, lemmatization
-- **ML:** scikit-learn — TF-IDF vectorization, Logistic Regression, Naive Bayes
+- **NLP:** spaCy (`en_core_web_sm`) - POS tagging, dependency parsing, lemmatization
+- **ML:** scikit-learn - TF-IDF vectorization, Logistic Regression, Naive Bayes
 - **Data:** pandas, numpy
 - **Visualization:** matplotlib, seaborn, wordcloud
 - **Dataset:** [MTSamples (Medical Transcriptions)](https://www.kaggle.com/datasets/tboyle10/medicaltranscriptions) via Kaggle
@@ -94,7 +86,7 @@ detect_negation("Patient has severe headache.")
 # → [{'Entity': 'headache', 'Status': 'Present', 'Negation_Word': None}]
 ```
 
-This distinction matters clinically — a keyword search for "pain" would incorrectly flag both sentences as positive for pain.
+This distinction matters clinically - a keyword search for "pain" would incorrectly flag both sentences as positive for pain.
 
 ---
 
@@ -109,15 +101,5 @@ This distinction matters clinically — a keyword search for "pain" would incorr
 | 5 | heart | bone |
 
 Distinct vocabularies confirm that specialty-specific terminology is a strong classification signal.
-
----
-
-## 🔮 Future Improvements
-
-- [ ] Expand to more specialties (currently 4)
-- [ ] Try BioBERT / ClinicalBERT for higher accuracy
-- [ ] Multi-label classification for reports spanning multiple specialties
-- [ ] Deploy as a REST API for EHR integration
-- [ ] Real-time streaming pipeline
 
 ---

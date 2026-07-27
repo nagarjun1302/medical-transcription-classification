@@ -133,8 +133,7 @@ st.title("🏥 Medical Transcription Classifier")
 st.markdown(
     "An NLP pipeline that cleans clinical text, detects negation, and "
     "routes a report to the likely medical specialty. "
-    "[View the full project on GitHub](https://github.com/) · "
-    "[Read the notebook](https://github.com/)"
+    "[View the full project on GitHub](https://github.com/nagarjun1302/medical-transcription-classification)"
 )
 
 st.divider()
